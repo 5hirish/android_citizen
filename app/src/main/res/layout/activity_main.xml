@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:padding="16dp"
+    android:background="@color/colorPrimary"
+    tools:context="com.alleviate.citizen.MainActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="@dimen/title40"
+        android:layout_marginTop="@dimen/title_top"
+        android:textColor="@color/white"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@mipmap/ic_next"
+        app:elevation="6dp"
+        app:borderWidth="0dp"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:pressedTranslationZ="12dp"
+        android:layout_marginBottom="@dimen/margin_40"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Player Name"
+        android:textSize="24sp"
+        android:id="@+id/player_name"
+        android:textColor="@color/white"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@id/city_name"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="City Name"
+        android:textSize="24sp"
+        android:id="@+id/city_name"
+        android:layout_above="@+id/next"
+        android:layout_marginBottom="80dp"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginRight="16dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/ic_action_about"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

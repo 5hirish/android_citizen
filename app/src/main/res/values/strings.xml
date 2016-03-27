@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">CitiZen</string>
+
+    <string name="city_name">City Name</string>
+    <string name="player_name">Player Name</string>
+    <string name="title_activity_help">Introduction</string>
+
+
+    <string name="citizen_intro_1">Hi</string>
+    <string name="citizen_intro_2">! Welcome to</string>
+    <string name="citizen_intro_3">It is the city of dreams. You are opening yourself to a world of wonderful opportunities.
+    \n\nBut you need to be careful, this city can be intimidating too… Make the right choices and you just might end up living
+    a dream life!</string>
+
+    <string name="citizen_intro_4">During game-play, you may face some challenges. Think wisely and then select the right option. With the correct
+        option you will earn points and level up in the game or else will tumble down the ladder!</string>
+
+</resources>
