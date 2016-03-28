@@ -129,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/citizen_intro_1"
-                android:id="@+id/score"
+                android:id="@+id/solution"
                 android:textColor="#000"
                 android:layout_marginTop="10dp"
                 android:layout_centerHorizontal="true" />
@@ -140,10 +140,10 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/citizen_intro_4"
-                android:id="@+id/solu"
+                android:id="@+id/explanation"
                 android:textColor="#000"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/score"
+                android:layout_below="@+id/solution"
                 android:layout_centerHorizontal="true" />
 
         </RelativeLayout>
