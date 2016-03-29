@@ -18,7 +18,8 @@
         android:gravity="center"
         android:textSize="@dimen/title40"
         android:layout_marginTop="@dimen/title_top"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:id="@+id/textView3" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/next"
@@ -34,30 +35,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Player Name"
-        android:textSize="24sp"
-        android:id="@+id/player_name"
-        android:textColor="@color/white"
-        android:layout_marginBottom="20dp"
-        android:layout_above="@id/city_name"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="City Name"
-        android:textSize="24sp"
-        android:id="@+id/city_name"
-        android:layout_above="@+id/next"
-        android:layout_marginBottom="80dp"
-        android:textColor="@color/white"
-        android:layout_centerHorizontal="true" />
-
     <ImageView
         android:layout_width="25dp"
         android:layout_height="25dp"
@@ -68,16 +45,71 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/profile"
+        android:src="@mipmap/ic_male"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="000"
+        android:text="Player Name"
+        android:textSize="24sp"
+        android:id="@+id/player_name"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/profile"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="City Name"
+        android:textSize="24sp"
+        android:id="@+id/city_name"
+        android:textColor="@color/white"
+        android:layout_below="@+id/player_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="$ 00"
         android:textSize="28sp"
         android:id="@+id/score"
         android:textColor="@color/white"
-        android:layout_above="@+id/player_name"
-        android:layout_marginBottom="20dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/city_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Level 1"
+        android:textSize="18sp"
+        android:id="@+id/level"
+        android:textColor="@color/white"
+        android:layout_below="@+id/score"
+        android:layout_alignLeft="@+id/score"
+        android:layout_alignStart="@+id/score" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/image_level"
+        android:src="@mipmap/ic_star"
+        android:layout_marginRight="20dp"
+        android:layout_alignTop="@+id/score"
+        android:layout_toLeftOf="@+id/level"
+        android:layout_toStartOf="@+id/level" />
 
 </RelativeLayout>

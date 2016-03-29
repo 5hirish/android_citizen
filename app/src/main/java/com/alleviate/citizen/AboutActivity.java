@@ -20,7 +20,7 @@ public class AboutActivity extends AppCompatActivity {
 
         String[] col = {db.dbCZ_Id,db.dbCZ_Issue,db.dbCZ_OptA,db.dbCZ_OptB,db.dbCZ_OptC,db.dbCZ_Answer,db.dbCZ_Status,db.dbCZ_Explanation,db.dbCZ_ImageId};
 
-        Cursor cur =dbr.query(db.dbCZ_table_Issue,col,null,null,null,null,null,"1");
+        Cursor cur =dbr.query(db.dbCZ_table_Issue,col,null,null,null,null,null);
 
         if(cur!=null){
             while (cur.moveToNext()){

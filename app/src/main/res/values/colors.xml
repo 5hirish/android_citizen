@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#0277BD</color>
     <color name="colorAccent">#BBDEFB</color>
     <color name="white">#FFFFFF</color>
+    <color name="skyline">#00958A</color>
 </resources>

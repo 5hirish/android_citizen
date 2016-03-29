@@ -1,3 +1,4 @@
-0|Issue|OptionA|OptionB|OptionC|Answer|Explanation
-1|Who is Shirish Kadam? And what describes him the best?|Android Developer|Server Administrator|Web Developer|Android Developer|Yeah He is...What do ya think.|0
-2|Which is a Linux OS?|Mac OSX|Windows 7|Ubuntu|Ubuntu|Ubuntu is an Debian based OS|1
+0|Issue|OptionA|OptionB|OptionC|Answer|Explanation|ImageId
+1|There is a creative difference between you and your business partner, which is causing you a lot of stress.|Kick him out|Talk it out and reach a mutual understanding|Ignore it|Talk it out and reach a mutual understanding|Talking out any issue, and avoiding irrational decisions would lead to a better relationship|28
+2|Who is Shirish Kadam? And what describes him the best?|Android Developer|Server Administrator|Web Developer|Android Developer|Yeah He is...What do ya think.|0
+3|Which is a Linux OS?|Mac OSX|Windows 7|Ubuntu|Ubuntu|Ubuntu is an Debian based OS|1
