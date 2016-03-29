@@ -1,6 +1,7 @@
 package com.alleviate.citizen;
 
 import android.app.AlertDialog;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -368,7 +369,7 @@ public class IssueActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        /*SQLiteHelper db = new SQLiteHelper(getApplicationContext());
+                        SQLiteHelper db = new SQLiteHelper(getApplicationContext());
                         SQLiteDatabase dbw = db.getWritableDatabase();
 
                         ContentValues update_values = new ContentValues();
@@ -376,7 +377,7 @@ public class IssueActivity extends AppCompatActivity {
 
                         String where = db.dbCZ_Id+" = "+id;
 
-                        dbw.update(db.dbCZ_table_Issue, update_values, where, null);*/
+                        dbw.update(db.dbCZ_table_Issue, update_values, where, null);
 
                         next_issue();
                     }
