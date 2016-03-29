@@ -1,19 +1,15 @@
 package com.alleviate.citizen;
 
 import android.content.BroadcastReceiver;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,125 +44,72 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //filldatabase();
+        final SharedPreferences citizen = getSharedPreferences("CitiZen",MODE_PRIVATE);
 
-        SharedPreferences citizen = getPreferences(MODE_PRIVATE);
+        player = citizen.getString("Player", "");
+        city = citizen.getString("City", "");
+        gender = citizen.getString("Gender", "");
+        score = citizen.getInt("Score", 0);
+        setdata = citizen.getString("DataSet", "");
 
-        player = citizen.getString("Player","");
-        city = citizen.getString("City","");
-        gender = citizen.getString("Gender","");
-        score = citizen.getInt("Score",0);
-        setdata = citizen.getString("DataSet","");
+        final SharedPreferences.Editor citizen_editor = citizen.edit();
 
-        if(setdata.equals("")){
+        if (setdata.equals("")) {
             new Thread(new InsertData(getApplicationContext())).start();
 
-            SharedPreferences.Editor citizen_editor = citizen.edit();
-            citizen_editor.putString("DataSet","Y").apply();
-            citizen_editor.putInt("BaseScore",basescore).apply();
+            citizen_editor.putString("DataSet", "Y").apply();
+            citizen_editor.putInt("BaseScore", basescore).apply();
+
         }
 
-        /*if(player.equals("") || city.equals("")){
+        if (player.equals("") || city.equals("")) {
 
             setContentView(R.layout.activity_first);
+
+            final EditText city_name = (EditText)findViewById(R.id.city_name);
+            final EditText player_name = (EditText)findViewById(R.id.player_name);
 
             FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.next);
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent in = new Intent(MainActivity.this,HelpActivity.class);
-                    in.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                    startActivity(in);
+                    if (!player.equals("") && !city.equals("")) {
+                        citizen_editor.putString("Player", player_name.getText().toString()).commit();
+                        citizen_editor.putString("City", city_name.getText().toString()).commit();
+
+                        Intent in = new Intent(MainActivity.this, HelpActivity.class);
+                        in.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                        startActivity(in);
+                    }else {
+                        Toast.makeText(getApplicationContext(),"Please Enter your City and Name...!",Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
 
-        }else {*/
+        } else {
 
             setContentView(R.layout.activity_main);
             FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.next);
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent in = new Intent(MainActivity.this,IssueActivity.class);
+                    Intent in = new Intent(MainActivity.this, IssueActivity.class);
                     in.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                     startActivity(in);
                 }
             });
 
-        //}
-
-        ImageView about = (ImageView)findViewById(R.id.about);
-        about.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in = new Intent(MainActivity.this,AboutActivity.class);
-                startActivity(in);
-            }
-        });
-
-
-    }
-
-    private void filldatabase() {
-
-        SQLiteHelper db = new SQLiteHelper(getApplicationContext());
-        SQLiteDatabase dbw = db.getWritableDatabase();
-
-        try {
-            Scanner in = new Scanner(new File("assets/issue.txt"));
-            String status = "N";
-
-            in.nextLine();		//Skip Header
-
-            String regex = "\\|";
-
-            while (in.hasNext()) {
-                String[] row = in.nextLine().split(regex);
-
-                int id = Integer.parseInt(row[0]);
-                String issue = row[1];
-                String optA = row[2];
-                String optB = row[3];
-                String optC = row[4];
-                String answer = row[5];
-
-                ContentValues insert_data = new ContentValues();
-                insert_data.put(db.dbCZ_Issue,issue);
-                insert_data.put(db.dbCZ_OptA,optA);
-                insert_data.put(db.dbCZ_OptB, optB);
-                insert_data.put(db.dbCZ_OptC, optC);
-                insert_data.put(db.dbCZ_Answer, answer);
-                insert_data.put(db.dbCZ_Status, status);
-
-                long dbid = dbw.insert(db.dbCZ_table_Issue, null, insert_data);
             }
 
-        } catch (FileNotFoundException e) {
-            System.out.println("File Not Found : "+e);
+            ImageView about = (ImageView) findViewById(R.id.about);
+            about.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent in = new Intent(MainActivity.this, AboutActivity.class);
+                    startActivity(in);
+                }
+            });
+
+
         }
-
-        dbw.close();
-    }
-/*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/
 }
