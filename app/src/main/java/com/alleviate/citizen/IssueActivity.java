@@ -36,9 +36,9 @@ public class IssueActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);}
     }
 
-    String issue,answer,explanation;
+    String issue, answer, explanation, option_str;
     String option[] = new String[3];
-    int id,imageid,score,level,basescore;
+    int id, imageid, score, level, basescore, answer_opt;
 
 
 
@@ -65,10 +65,10 @@ public class IssueActivity extends AppCompatActivity {
             while (cur.moveToNext()){
                 id =cur.getInt(cur.getColumnIndex(SQLiteHelper.dbCZ_Id));
                 issue =cur.getString(cur.getColumnIndex(SQLiteHelper.dbCZ_Issue));
-                option[0] =cur.getString(cur.getColumnIndex(SQLiteHelper.dbCZ_OptA));
-                option[1] =cur.getString(cur.getColumnIndex(SQLiteHelper.dbCZ_OptB));
-                option[2] =cur.getString(cur.getColumnIndex(SQLiteHelper.dbCZ_OptC));
-                answer =cur.getString(cur.getColumnIndex(SQLiteHelper.dbCZ_Answer));
+                option_str =cur.getString(cur.getColumnIndex(SQLiteHelper.dbCZ_Opt));
+                option = option_str.split("#");
+                answer_opt =cur.getInt(cur.getColumnIndex(SQLiteHelper.dbCZ_Answer));
+                answer = option[answer_opt];
                 explanation =cur.getString(cur.getColumnIndex(SQLiteHelper.dbCZ_Explanation));
                 imageid =cur.getInt(cur.getColumnIndex(SQLiteHelper.dbCZ_ImageId));
 
@@ -86,7 +86,8 @@ public class IssueActivity extends AppCompatActivity {
         final RadioGroup radioGroup = new RadioGroup(this);
         radioGroup.setOrientation(RadioGroup.VERTICAL);//or RadioGroup.VERTICAL
 
-        for(int i = 0; i < N_options; i++){
+        for(int i = 0; i < option.length; i++){
+
             radioButtons[i]  = new RadioButton(this);
             radioGroup.addView(radioButtons[i]);
             radioButtons[i].setTextSize(18);
@@ -211,10 +212,10 @@ public class IssueActivity extends AppCompatActivity {
             while (cur.moveToNext()){
                 id =cur.getInt(cur.getColumnIndex(SQLiteHelper.dbCZ_Id));
                 issue =cur.getString(cur.getColumnIndex(SQLiteHelper.dbCZ_Issue));
-                option[0] =cur.getString(cur.getColumnIndex(SQLiteHelper.dbCZ_OptA));
-                option[1] =cur.getString(cur.getColumnIndex(SQLiteHelper.dbCZ_OptB));
-                option[2] =cur.getString(cur.getColumnIndex(SQLiteHelper.dbCZ_OptC));
-                answer =cur.getString(cur.getColumnIndex(SQLiteHelper.dbCZ_Answer));
+                option_str =cur.getString(cur.getColumnIndex(SQLiteHelper.dbCZ_Opt));
+                option = option_str.split("#");
+                answer_opt =cur.getInt(cur.getColumnIndex(SQLiteHelper.dbCZ_Answer));
+                answer = option[answer_opt];
                 explanation =cur.getString(cur.getColumnIndex(SQLiteHelper.dbCZ_Explanation));
                 imageid =cur.getInt(cur.getColumnIndex(SQLiteHelper.dbCZ_ImageId));
 
@@ -232,7 +233,8 @@ public class IssueActivity extends AppCompatActivity {
         final RadioGroup radioGroup = new RadioGroup(this);
         radioGroup.setOrientation(RadioGroup.VERTICAL);//or RadioGroup.VERTICAL
 
-        for(int i=0; i<N_options; i++){
+        for(int i = 0; i < option.length; i++){
+
             radioButtons[i]  = new RadioButton(this);
             radioGroup.addView(radioButtons[i]);
             radioButtons[i].setTextSize(18);

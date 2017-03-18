@@ -33,7 +33,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         String creat_table = "CREATE TABLE "+dbCZ_table_Issue+"  ("+dbCZ_Id+" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
-                        dbCZ_Issue+" TEXT," + dbCZ_Opt+" TEXT,"+ dbCZ_Answer+" TEXT, "+dbCZ_Status+" TEXT, " +
+                        dbCZ_Issue+" TEXT," + dbCZ_Opt+" TEXT,"+ dbCZ_Answer+" INTEGER, "+dbCZ_Status+" VARCHAR, " +
                         ""+dbCZ_Explanation+" TEXT, "+dbCZ_ImageId+" INTEGER)";
 
         sqLiteDatabase.execSQL(creat_table);
