@@ -1,0 +1,21 @@
+0|Issue|Option|Answer|Explanation|ImageId
+1|You need to rent a house following are the neighborhood choices:|Clam and quiet (but bit costly)#Cheap but unsafe#Live in your car|0|A safe neighborhood makes you feel safe and comfortable|5
+2|Let's make some money, we need a job. Here are some opportunities:|Uber Cab Driver#Illegal dealer(Let's get rich!)#Let's open our own business|2|Think Big! We think we should start a business...|15
+3|OK, We have set up a business, capital is required, What should we do?|Find a business partner (Profit will be divided)#Loan money from a Mafia (Fast)#Give up|0|Its alright to take your baby steps with the support from an experienced person.|8
+4|Looks like we need to hire some people...|Hire people and underpay them#Hire a few trained people#Outsource it|1|A good team and motivating team will keep your morals high|63
+5|You are getting less sleep as you are working overnight to improve your business.|Take short naps at work#Take a break and relax#Keep working|1|Less sleep causes lack of concentration and frustration|19
+6|You are late for a meeting...|Drive Fast#Skip the meeting#Notify that you will be late|2|Driving fast when stressed cause lack of attention which can be risky|30
+7|Yum this burgers are quiet tasty, we should do this often|Avoid fast-foods#Keep em coming#Let us try some soda along|0|Fast foods cause a lot of health problems in the long run!|58
+8|Its is brought to your attention by an employee that the waste is not being treated properly|Ignore it...economical#Recycle it (costly)#Dump it|1|Its our duty to take care of our environment|67
+9|There are some malpractices going in your neighborhood...|Join them!#Ignore them#Report them|2|This might someday indirectly or directly affect you.|52
+10|You are under pressure at your office recently, which is taking toll on your health|Practice Yoga#Seek help of some drugs#Ignore the problems|0|Practicing yoga and meditation helps your mind to calm down and has no side effects like drugs|11
+11|There is some misunderstanding between you and your partner which is causing tension in your work relationship|Discuss it and sort it out#Hold grudge#Ignore it|0|Sitting down and discussing your problem leads to understanding and solution|41
+12|You notice that your stamina is decreasing and you get tired easily!|Take performance enhancer drugs#Take it slow#Start exercising|2|Exercising keeps you away from a lot of health problems and improves your physical build and stamina|17
+13|Watching a new movie you are inspired to get into a great physic|Hit the gym#Take some performance enhancer drugs#Give up|0|Working hard to your aim is the only way to succeed and exposing your body to drugs may cause many other problems just for the sake of quick results|12
+14|You see a broken water supply pipe on the way, which is spilling water|Report to authority#Drive around it#Ignore|0|Water is very important asset and we need to save it|0
+15|You have a persistent headache|Visit your doctor#Take a tablet from the advt.#Take a drink|0|Persistent headache or any such condition might be an indication to a dangerous medical condition, always get tested|2
+16|There are few cases of a harmful virus in the news|Laugh it off#Take a precautionary shot or get tested#Share on facebook|1|Always get tested and safe when such conditions occur|42
+17|Recently the electric bill of your house is increasing|Stop using electric equipment#Start using florescent lights and automatic electronic devices#Earn more|1|Saving electricity will save natural resources when it is generated from them|9
+18|Your health is declining and have digestive issues|Start eating healthy vegetable and fruits and avoid alcohol#Drink to it#Take an Eno|0|Healthy and fresh vegetable helps you keep a balanced diet|70
+19|You are addicted to smoking and having respiratory problems|Accept the fact and start taking measures to stop smoking#Ignore it#Get stressed|0|Smoking affects the health of you and people around you|57
+20|You are feeling unsafe about yourself|Buy a gun#Seek help from police department#Take law in your own hands|1|Gun violence is increasing and affecting the lives of many people, stop it.|56

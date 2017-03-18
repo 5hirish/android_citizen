@@ -18,7 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".HelpActivity"
             android:label="@string/title_activity_help"
@@ -28,7 +27,8 @@
                 android:value="com.alleviate.citizen.MainActivity" />
         </activity>
         <activity android:name=".IssueActivity" />
-        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".ScoreActivity"></activity>
     </application>
 
 </manifest>

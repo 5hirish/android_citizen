@@ -4,23 +4,23 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class ScoreActivity extends AppCompatActivity {
 
     View decorView;                                         //Database and GCM
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-         decorView = getWindow().getDecorView();
+        decorView = getWindow().getDecorView();
         if (hasFocus) {
             decorView.setSystemUiVisibility(
                     View.SYSTEM_UI_FLAG_LAYOUT_STABLE
@@ -42,71 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         set_pref();
 
-        refresh();
-
-        drop_and_refresh();
-
-    }
-
-    @Override
-    public void onResume(){
-        super.onResume();
-
-        UiChangeListener();
-
-        set_pref();
-
-        refresh();
-
-        drop_and_refresh();
-
-    }
-
-    private void drop_and_refresh() {
-
-        ImageView drop = (ImageView) findViewById(R.id.drop);
-        drop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                SQLiteHelper db = new SQLiteHelper(getApplicationContext());
-                SQLiteDatabase dbw = db.getWritableDatabase();
-
-                ContentValues update_values = new ContentValues();
-                update_values.put(SQLiteHelper.dbCZ_Status,"N");
-
-                dbw.delete(SQLiteHelper.dbCZ_table_Issue, null, null);
-
-                Toast.makeText(getApplicationContext(), "DataSet Reloaded...", Toast.LENGTH_SHORT).show();
-
-                new Thread(new InsertData(getApplicationContext())).start();
-            }
-        });
-
-
-    }
-
-    private void refresh() {
-
-        ImageView about = (ImageView) findViewById(R.id.about);
-        about.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                reload_dataset();
-
-                SharedPreferences citizen = getSharedPreferences("CitiZen", MODE_PRIVATE);
-                SharedPreferences.Editor editor = citizen.edit();
-                editor.putInt("Score", 0);
-                editor.putInt("Level", 1);
-                editor.commit();
-
-                TextView tv_score = (TextView)findViewById(R.id.score);
-                TextView tv_level = (TextView)findViewById(R.id.level);
-
-                tv_score.setText("$ "+score);               //Format dollars...
-                tv_level.setText("Level "+level);
-            }
-        });
+        reload_dataset();
 
     }
 
@@ -164,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                         citizen_editor.putString("Player", player_name.getText().toString()).commit();
                         citizen_editor.putString("City", city_name.getText().toString()).commit();
 
-                        Intent in = new Intent(MainActivity.this, HelpActivity.class);
+                        Intent in = new Intent(ScoreActivity.this, HelpActivity.class);
                         in.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                         startActivity(in);
                     }else {
@@ -175,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else {
 
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.activity_score);
 
             TextView tv_player = (TextView)findViewById(R.id.player_name);
             TextView tv_city = (TextView)findViewById(R.id.city_name);
@@ -200,8 +136,7 @@ public class MainActivity extends AppCompatActivity {
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent in = new Intent(MainActivity.this, IssueActivity.class);
-                    in.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                    Intent in = new Intent(ScoreActivity.this, MainActivity.class);
                     startActivity(in);
                 }
             });

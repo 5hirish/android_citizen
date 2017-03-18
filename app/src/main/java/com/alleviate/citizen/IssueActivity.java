@@ -3,6 +3,7 @@ package com.alleviate.citizen;
 import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -209,7 +210,11 @@ public class IssueActivity extends AppCompatActivity {
         Cursor cur =dbr.query(SQLiteHelper.dbCZ_table_Issue, null, where, null, null, null, null, "1");
 
         if (cur.getCount() == 0){
-            finish();
+
+            Intent in = new Intent(IssueActivity.this, ScoreActivity.class);
+            //in.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+            startActivity(in);
+
         }
 
         if(cur!=null){
