@@ -39,7 +39,7 @@ public class IssueActivity extends AppCompatActivity {
 
     String issue, answer, explanation, option_str;
     String option[] = new String[3];
-    int id, imageid, score, level, basescore, answer_opt;
+    int id, imageid, score, level, basescore, answer_opt, right, wrong;
 
 
 
@@ -53,6 +53,9 @@ public class IssueActivity extends AppCompatActivity {
         score = citizen.getInt("Score", 0);
         level = citizen.getInt("Level", 1);
         basescore = citizen.getInt("BaseScore", 10);
+        right = citizen.getInt("Right", 0);
+        wrong = citizen.getInt("Wrong", 0);
+
 
         SQLiteHelper db = new SQLiteHelper(getApplicationContext());
         SQLiteDatabase dbr = db.getReadableDatabase();
@@ -138,9 +141,11 @@ public class IssueActivity extends AppCompatActivity {
                 if(selected_option.equals(answer)){
                     tvanswer.setText(answer);
                     citizen_editor.putInt("Score", score + basescore).apply();
+                    citizen_editor.putInt("Right", right + 1).apply();
                 }else{
                     tvanswer.setText("Wrong! It's "+answer);
                     citizen_editor.putInt("Score", score - basescore).apply();
+                    citizen_editor.putInt("Wrong", wrong + 1).apply();
 
                 }
                 tvexplanation.setText(explanation);
@@ -195,11 +200,14 @@ public class IssueActivity extends AppCompatActivity {
     }
 
     private void next_issue() {
+
         final SharedPreferences citizen = getSharedPreferences("CitiZen", MODE_PRIVATE);
         final SharedPreferences.Editor citizen_editor = citizen.edit();
         score = citizen.getInt("Score", 0);
         level = citizen.getInt("Level", 1);
         basescore = citizen.getInt("BaseScore", 10);
+        right = citizen.getInt("Right", 0);
+        wrong = citizen.getInt("Wrong", 0);
 
         SQLiteHelper db = new SQLiteHelper(getApplicationContext());
         SQLiteDatabase dbr = db.getReadableDatabase();
@@ -295,9 +303,12 @@ public class IssueActivity extends AppCompatActivity {
                 if(selected_option.equals(answer)){
                     tvanswer.setText(answer);
                     citizen_editor.putInt("Score", score + basescore).apply();
+                    citizen_editor.putInt("Right", right + 1).apply();
+
                 }else{
                     tvanswer.setText("Wrong! It's "+answer);
                     citizen_editor.putInt("Score", score - basescore).apply();
+                    citizen_editor.putInt("Wrong", wrong + 1).apply();
 
                 }
                 tvexplanation.setText(explanation);

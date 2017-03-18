@@ -32,7 +32,7 @@ public class ScoreActivity extends AppCompatActivity {
     }
 
     String player, city, gender, setdata;
-    int score, basescore = 10, level;
+    int score, basescore = 10, level, right, wrong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +56,8 @@ public class ScoreActivity extends AppCompatActivity {
         score = citizen.getInt("Score", 0);
         setdata = citizen.getString("DataSet", "");
         level = citizen.getInt("Level", 1);
+        right = citizen.getInt("Right", 0);
+        wrong = citizen.getInt("Wrong", 0);
 
         final SharedPreferences.Editor citizen_editor = citizen.edit();
 
@@ -117,6 +119,9 @@ public class ScoreActivity extends AppCompatActivity {
             TextView tv_city = (TextView)findViewById(R.id.city_name);
             TextView tv_score = (TextView)findViewById(R.id.score);
             TextView tv_level = (TextView)findViewById(R.id.level);
+            TextView tv_right = (TextView)findViewById(R.id.tv_correct);
+            TextView tv_wrong = (TextView)findViewById(R.id.tv_wrong);
+
             ImageView im_profile = (ImageView)findViewById(R.id.profile);
 
             String profile = citizen.getString("Profile", "Male");
@@ -131,6 +136,8 @@ public class ScoreActivity extends AppCompatActivity {
             tv_city.setText(city+" City");
             tv_score.setText("$ "+score);               //Format dollars...
             tv_level.setText("Level "+level);
+            tv_right.setText(right+"");
+            tv_wrong.setText(wrong+"");
 
             FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.next);
             fab.setOnClickListener(new View.OnClickListener() {
