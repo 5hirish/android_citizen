@@ -15,7 +15,7 @@
 14|You see a broken water supply pipe on the way, which is spilling water|Report to authority#Drive around it#Ignore|0|Water is very important asset and we need to save it|0
 15|You have a persistent headache|Visit your doctor#Take a tablet from the advt.#Take a drink|0|Persistent headache or any such condition might be an indication to a dangerous medical condition, always get tested|2
 16|There are few cases of a harmful virus in the news|Laugh it off#Take a precautionary shot or get tested#Share on facebook|1|Always get tested and safe when such conditions occur|42
-17|Recently the electric bill of your house is increasing|Stop using electric equipment#Start using florescent lights and automatic electronic devices#Earn more|2|Saving electricity will save natural resources when it is generated from them|9
+17|Recently the electric bill of your house is increasing|Stop using electric equipment#Start using florescent lights and automatic electronic devices#Earn more|1|Saving electricity will save natural resources when it is generated from them|9
 18|Your health is declining and have digestive issues|Start eating healthy vegetable and fruits and avoid alcohol#Drink to it#Take an Eno|0|Healthy and fresh vegetable helps you keep a balanced diet|70
 19|You are addicted to smoking and having respiratory problems|Accept the fact and start taking measures to stop smoking#Ignore it#Get stressed|0|Smoking affects the health of you and people around you|57
 20|You are feeling unsafe about yourself|Buy a gun#Seek help from police department#Take law in your own hands|1|Gun violence is increasing and affecting the lives of many people, stop it.|56

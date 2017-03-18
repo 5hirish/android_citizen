@@ -148,15 +148,15 @@ public class IssueActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        /*SQLiteHelper db = new SQLiteHelper(getApplicationContext());
+                        SQLiteHelper db = new SQLiteHelper(getApplicationContext());
                         SQLiteDatabase dbw = db.getWritableDatabase();
 
                         ContentValues update_values = new ContentValues();
-                        update_values.put(db.dbCZ_Status,"Y");
+                        update_values.put(SQLiteHelper.dbCZ_Status,"Y");
 
-                        String where = db.dbCZ_Id+" = "+id;
+                        String where = SQLiteHelper.dbCZ_Id +" = "+id;
 
-                        dbw.update(db.dbCZ_table_Issue, update_values, where, null);*/
+                        dbw.update(SQLiteHelper.dbCZ_table_Issue, update_values, where, null);
 
                         //Apply N to Y...in Status...
                         //recreate();
@@ -207,6 +207,10 @@ public class IssueActivity extends AppCompatActivity {
         String where = SQLiteHelper.dbCZ_Status +" = 'N'";
 
         Cursor cur =dbr.query(SQLiteHelper.dbCZ_table_Issue, null, where, null, null, null, null, "1");
+
+        if (cur.getCount() == 0){
+            finish();
+        }
 
         if(cur!=null){
             while (cur.moveToNext()){

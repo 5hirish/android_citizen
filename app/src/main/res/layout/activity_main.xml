@@ -40,7 +40,7 @@
         android:layout_height="25dp"
         android:layout_marginRight="16dp"
         android:id="@+id/about"
-        android:src="@drawable/ic_action_about"
+        android:src="@drawable/ic_action_reload"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -111,5 +111,14 @@
         android:layout_alignTop="@+id/score"
         android:layout_toLeftOf="@+id/level"
         android:layout_toStartOf="@+id/level" />
+
+    <TextView
+        android:id="@+id/alleviate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:text="An Alleviate Product" />
 
 </RelativeLayout>
