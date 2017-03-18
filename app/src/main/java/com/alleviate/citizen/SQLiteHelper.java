@@ -15,9 +15,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String dbCZ_table_Issue = "CZ_Issue";
     public static final String dbCZ_Id = "Id";
     public static final String dbCZ_Issue = "Issue";
-    public static final String dbCZ_OptA = "OptionA";
-    public static final String dbCZ_OptB = "OptionB";
-    public static final String dbCZ_OptC = "OptionC";
+    public static final String dbCZ_Opt = "Options";
     public static final String dbCZ_Answer = "Answer";
     public static final String dbCZ_Status = "Status";
     public static final String dbCZ_Explanation = "Explanation";
@@ -33,7 +31,11 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String creat_table = "CREATE TABLE "+dbCZ_table_Issue+"  ("+dbCZ_Id+" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, "+dbCZ_Issue+" TEXT, "+dbCZ_OptA+" TEXT, "+dbCZ_OptB+" TEXT, "+dbCZ_OptC+" TEXT, "+dbCZ_Answer+" TEXT, "+dbCZ_Status+" TEXT, "+dbCZ_Explanation+" TEXT, "+dbCZ_ImageId+" INTEGER)";
+
+        String creat_table = "CREATE TABLE "+dbCZ_table_Issue+"  ("+dbCZ_Id+" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+                        dbCZ_Issue+" TEXT," + dbCZ_Opt+" TEXT,"+ dbCZ_Answer+" TEXT, "+dbCZ_Status+" TEXT, " +
+                        ""+dbCZ_Explanation+" TEXT, "+dbCZ_ImageId+" INTEGER)";
+
         sqLiteDatabase.execSQL(creat_table);
 
     }
