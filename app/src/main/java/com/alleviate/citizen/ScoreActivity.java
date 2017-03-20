@@ -162,6 +162,12 @@ public class ScoreActivity extends AppCompatActivity {
         dbw.update(SQLiteHelper.dbCZ_table_Issue, update_values, null, null);
 
         Toast.makeText(getApplicationContext(), "DataSet Refreshed...", Toast.LENGTH_SHORT).show();
+
+        SharedPreferences citizen = getSharedPreferences("CitiZen", MODE_PRIVATE);
+        SharedPreferences.Editor editor = citizen.edit();
+        editor.putInt("Right", 0);
+        editor.putInt("Wrong", 0);
+        editor.commit();
     }
 
     public void UiChangeListener() {
