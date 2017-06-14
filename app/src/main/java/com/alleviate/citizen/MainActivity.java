@@ -44,8 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
         refresh();
 
-        drop_and_refresh();
-
     }
 
     @Override
@@ -57,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
         set_pref();
 
         refresh();
-
-        drop_and_refresh();
 
     }
 
@@ -205,6 +201,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(in);
                 }
             });
+
+            drop_and_refresh();
 
         }
     }
